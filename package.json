@@ -1,0 +1,27 @@
+{
+  "name": "chai-eql-immutable",
+  "version": "0.0.1",
+  "description": "Deeply eql for Immutable.js",
+  "main": "chai-eql-immutable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hokuma/chai-eql-immutable.git"
+  },
+  "keywords": [
+    "chai",
+    "immutable"
+  ],
+  "author": "hokuma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hokuma/chai-eql-immutable/issues"
+  },
+  "homepage": "https://github.com/hokuma/chai-eql-immutable#readme",
+  "dependencies": {
+    "chai": "^3.3.0",
+    "immutable": "^3.7.5"
+  }
+}
