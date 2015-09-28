@@ -3,7 +3,7 @@
 This provides a deeply equal assertion for [Facebook's Immutable.js object](https://facebook.github.io/immutable-js).
 
 # Motivation
-chai 'eql' assets that the target is deeply equal to value expected, including values depending on Immutable.js's internal state.
+chai `eql` asserts that the target is deeply equal to expected value, including values depending on Immutable.js's internal state.
 It makes diff outsputs complicated like following examples.
 
 ```
