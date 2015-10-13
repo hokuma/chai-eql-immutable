@@ -1,8 +1,61 @@
 # chai-eql-immutable
 
-This provides a deeply equal assertion for Facebook's Immutable object.
+This provides a deeply equal assertion for [Facebook's Immutable object](https://facebook.github.io/immutable-js).
 
 # Motivation
+Chai `eql` asserts that the target is deeply equal to expected value, including values depending on Immutable objects' innternal state.
+It makes diff outsputs complicated like following examples.
+
+```
+const a = Immutable.fromJS({a: [{b: 1}]});
+const b = Immutable.fromJS({a: [{b: 2}]});
+const c = a.setIn('b', 3);
+
+expect(a).to.eql(b);
+AssertionError: expected Map { "a": List [ Map { "b": 1 } ] } to deeply equal Map { "a": List [ Map { "b": 2 } ] }
++ expected - actual
+
+                 "_root": {
+                   "entries": [
+                     [
+                       "b"
+-                      1
++                      2
+                     ]
+                   ]
+                   "ownerID": {}
+                 }
+
+expect(a).to.eql(c);
+AssertionError: expected Map { "a": List [ Map { "b": 1 } ] } to deeply equal Map { "a": List [ Map { "b": 3 } ] }
++ expected - actual
+
+                 "_root": {
+                   "entries": [
+                     [
+                       "b"
+-                      1
++                      3
+               ]
+                   ]
+-                  "ownerID": {}
++                  "ownerID": [undefined]
+                 }
+                 "size": 1
+               }
+             ]
+           "size": 1
+         }
+       ]
+     ]
+-    "ownerID": {}
++    "ownerID": [undefined]
+   }
+   "size": 1
+ }
+```
+
+Immutable has [toJS()](http://facebook.github.io/immutable-js/docs/#/Iterable/toJS) which create equivalent JS object.In this module, if both actual and expected has `toJS()` funciton, calls `toJS()` and asserts with original `eql`. As a result, we can get pretty diff outputs like examples in Usage.
 
 # Usage
 ```
