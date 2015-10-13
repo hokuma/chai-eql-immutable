@@ -1,4 +1,5 @@
 # chai-eql-immutable
+![build status](https://circleci.com/gh/hokuma/chai-eql-immutable.svg?style=shield&circle-token=c37eec9ee5149ed4e6d1760691258d7cac70b1fa)
 
 This provides a deeply equal assertion for [Facebook's Immutable object](https://facebook.github.io/immutable-js).
 
