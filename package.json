@@ -4,8 +4,8 @@
   "description": "Deeply eql for Immutable.js",
   "main": "lib/chai-eql-immutable.js",
   "scripts": {
-    "build": "babel src --out-dir lib  --source-maps-inline",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir lib --source-maps-inline",
+    "test": "mocha --compilers js:babel/register spec/chai-eql-immutable.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,8 @@
     "immutable": "^3.7.5"
   },
   "devDependencies": {
-    "babel": "^5.8.23"
+    "babel": "^5.8.23",
+    "mocha": "^2.3.3"
   },
   "files": [
     "lib"
